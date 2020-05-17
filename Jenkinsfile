@@ -1,22 +1,10 @@
 pipeline {
-    
-    
-    agent {
-        docker {'myDoc' }
-    }
+    agent { docker 'alpine' }
     stages {
-        
         stage('Test') {
             steps {
-                script {
-                    def dockerHome = tool 'myDoc'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-                    withMaven(jdk: 'java', maven: 'Maven') {
-                           
-                            
-                    }
-                }
+                sh('printenv')
+            }
         }
     }
-}
 }
