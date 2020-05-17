@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'alpine' }
+    agent { docker 'master' }
     stages {
         stage('Test') {
             steps {
