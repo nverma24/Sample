@@ -10,8 +10,8 @@ pipeline {
         docker {
           // Set both label and image
           label 'docker'
-          image 'Master'
-         // args '--name docker-node' // list any args
+          image 'node:Master'
+          args '--name docker-node' // list any args
         }
       }
       steps {
