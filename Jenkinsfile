@@ -1,13 +1,14 @@
 pipeline {
     
-    stage('Initialize'){
-        def dockerHome = tool 'myDoc'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+    
     agent {
         docker { image 'myDoc' }
     }
     stages {
+        stage('Initialize'){
+        def dockerHome = tool 'myDoc'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
         stage('Test') {
             steps {
                 script {
