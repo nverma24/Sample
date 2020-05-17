@@ -10,7 +10,7 @@ pipeline {
         docker {
           // Set both label and image
           label 'docker'
-          image 'node:master'
+          image 'Master'
          // args '--name docker-node' // list any args
         }
       }
