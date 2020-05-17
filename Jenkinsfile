@@ -4,7 +4,17 @@ pipeline {
     }
     stages {
         stage('Test') {
-            
+            steps {
+                script {
+                    
+                    withMaven(jdk: 'java', maven: 'Maven') {
+                           
+                            sh """
+                                cd $WORKSPACE
+                                mvn clean install
+                            """
+                    }
+                }
         }
     }
 }
