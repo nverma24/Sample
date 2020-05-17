@@ -2,7 +2,7 @@ pipeline {
     
     
     agent {
-        docker { image 'myDoc' }
+        docker {'myDoc' }
     }
     stages {
         
