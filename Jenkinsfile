@@ -5,14 +5,12 @@ pipeline {
         docker { image 'myDoc' }
     }
     stages {
-        stage('Initialize'){
-        def dockerHome = tool 'myDoc'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+        
         stage('Test') {
             steps {
                 script {
-                    
+                    def dockerHome = tool 'myDoc'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
                     withMaven(jdk: 'java', maven: 'Maven') {
                            
                             sh """
